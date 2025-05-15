@@ -1,3 +1,36 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const loginContainer = document.getElementById("loginContainer");
+    const nerdContainer = document.getElementById("nerdContainer");
+    const loginForm = document.getElementById("loginForm");
+    const logoutButton = document.getElementById("logoutButton");
+
+    if (localStorage.getItem("loggedIn") === "true"){
+        loginContainer.style.display = "none";
+        nerdContainer.style.display = "blocl";
+    }
+
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === "admin" && password === "123456") {
+            alert("Bạn đã Đăng Nhập");
+            localStorage.setItem("loggedIn", "true");
+            loginContainer.style.display = "none";
+            nerdContainer.style.display = "block";
+        } else {
+            alert("Tên đăng nhập hoặc mật khẩu không chính xác");
+        }
+    });
+
+    logoutButton.addEventListener("click", function () {
+        localStorage.removeItem("loggedIn");
+        loginContainer.style.display = "block";
+        nerdContainer.style.display = "none";
+    })
+});
 const form = document.getElementById('nerdForm');
 const nerdDiv = document.getElementById('nerdList');
 
