@@ -1,3 +1,21 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const cursordot = document.querySelector('.cursor-dot');
+    document.addEventListener('mousemove', (e) => {
+        cursordot.style.left = `${e.clientx}px`;
+        cursordot.style.top = `${e.clienty}px`;
+    });
+});
+document.addEventListener('mousemove', function (e) {
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    ripple.style.left = `${e.clientX}px`;
+    ripple.style.top = `${e.clientY}px`;
+    document.querySelector('.ripple-container').appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+    });
 document.addEventListener("DOMContentLoaded", function () {
     const loginContainer = document.getElementById("loginContainer");
     const nerdContainer = document.getElementById("nerdContainer");
