@@ -54,6 +54,29 @@
         <button id="logoutButton">Đăng Xuất</button>
     </div>
 
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBczsOuc93q4TCq4qgMHiYnPiy8RxAheBQ",
+    authDomain: "index-ab8fe.firebaseapp.com",
+    projectId: "index-ab8fe",
+    storageBucket: "index-ab8fe.firebasestorage.app",
+    messagingSenderId: "769673167668",
+    appId: "1:769673167668:web:d3f37bb884db2292801b61",
+    measurementId: "G-CTZJWY499M"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
     <script src="js.js"></script>
 </body>
 </html>

@@ -1,37 +1,3 @@
-/* #loginContainer { 
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background:#fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-#loginContainer input {
-    width: 100px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-}
-#loginContainer button {
-    background-color: #1877f2;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-#loginContainer button:hover {
-    background-color: #145dbf;
-/* } */
-
-
-
-
 body {
     display: flex;
     align-items: center;
@@ -89,7 +55,7 @@ button {
 button:hover {
     background: #357ae8;
 }
-.cursor-pointer {
+.cursor-dot {
     position: fixed;
     top: 0;
     left: 0;
@@ -98,11 +64,14 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
     pointer-events: none;
-    transition: opacity 0.3 ease;
+    transition: all 0.3s ease;
     z-index: 1000;
 }
-.login-container:hover ~ .cursor-pointer {
+
+/* Ripple container sẽ ẩn khi hover vào login-box */
+.login-box:hover ~ .ripple-container {
     opacity: 0;
+    pointer-events: none;
 }
 .login-options {
     font-size: 12px;
