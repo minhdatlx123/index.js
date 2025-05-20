@@ -45,17 +45,14 @@ body {
 }
 .login-box {
     background: rgba(255, 255, 255, 0.1);
+    color: #333;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 20px;
-    padding: 30px 25px;
-    width: 300px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.2);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    padding: 40px 30px;
+    width: 350px;
+    box-shadow: 0 8px 24px rgba(0 , 0, 0, 0.2);
+    
 }
 .login-form {
     display: flex;
@@ -65,29 +62,64 @@ body {
 input {
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+input::placeholder {
+    color: #666;
+}
+input:focus {
     outline: none;
+    border: 1px solid #1877f2;
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
 }
 button {
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: #4285f4;
     color: white;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0,3 ease;
 }
 button:hover {
     background: #357ae8;
+}
+.cursor-pointer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: opacity 0.3 ease;
+    z-index: 1000;
+}
+.login-container:hover ~ .cursor-pointer {
+    opacity: 0;
 }
 .login-options {
     font-size: 12px;
     text-align: center;
     margin-top: 10px;
 }
+.extra-links {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 13px;
+}
 .extra-links a {
-    corlor: #007bff;
+    color: #aad4ff;
     text-decoration: none;
+}
+.extra-links a:hover {
+    text-decoration: underline;
 }
 .extra-links span {
     margin: 0 5px;
@@ -97,7 +129,7 @@ form {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background: #fff;
+    background: blur(10px);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -124,28 +156,37 @@ form {
 h1 {
     text-align: center;
 }
-input[type='text'], textarea, input[type='file'] {
+h2 {
+    text-align-last: left;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+input[type='text']:focus,
+input[type="password"]:focus,
+input[type='file']:focus,
+textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 8px;
     border: 1px solid #ccc;
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     font-size: 14px;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
-input[type='text']:focus, textarea:focus, inpit[type='file']:focus {
-    border-color: #1877f2;
-    box-shadow: 0 3px 6px rgba(24, 119, 242, 0.2);
-    outline: none;
-}
-input[type='text'] {
-    cursor: pointer;
+input[type='text']
+input[type="password"] {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
     background-color: #f0f2f5;
     color: #555;
+    box-sizing: border-box;
 }
 button[type='submit'] {
-    background-color: #1877f2;
+    background-color: #0149b7d2;
     color: white;
     padding: 8px 16px;
     border: none;
@@ -156,5 +197,5 @@ button[type='submit'] {
 
 }
 button[type='submit']:hover {
-    background-color: #145dbf;
+    background-color: #04a866;
 }
